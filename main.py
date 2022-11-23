@@ -18,4 +18,4 @@ from AST import *
 from MyUtils import MyUtils  # type: ignore
 
 if __name__ == "__main__":
-    MUtils("test.java", "expect.txt").test_codegen()
+    MyUtils("test.java", "expect.txt").test_codegen()
