@@ -1,0 +1,2 @@
+# for example: java 8
+javac -cp ".;bcel-6.6.1.jar;commons-lang3-3.12.0.jar" JasminVisitor.java

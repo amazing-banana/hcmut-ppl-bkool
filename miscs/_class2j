@@ -1,0 +1,15 @@
+#!pwsh
+$bkoolj_path = "."
+$jasmin_v = "./bcel"
+$bcel = "./bcel/bcel-6.6.1.jar"
+$commons = "./bcel/commons-lang3-3.12.0.jar"
+java -cp "$bkoolj_path;$jasmin_v;$bcel;$commons" JasminVisitor BKoolClass > BKoolClazz.j
+
+# javap -verbose -c -s -constants BKoolClass.class 
+
+# #!sh
+# bkoolj_path="."
+# jasmin_v="./bcel"
+# bcel="./bcel/bcel-6.6.1.jar"
+# commons="./bcel/commons-lang3-3.12.0.jar"
+# java -cp "$bkoolj_path:$jasmin_v:$bcel:$commons" JasminVisitor BKoolClass

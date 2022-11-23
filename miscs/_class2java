@@ -1,0 +1,4 @@
+java -jar ./decompiler/cfr.jar ./BKoolClass.class
+
+# $libs=???
+# java -jar ./decompiler/cfr.jar --extraclasspath $libs ./BKoolClass.class
