@@ -285,9 +285,9 @@ def LocalConst(name, type_, index, ast):
     return LocalConstDefType(name, type_, index, False, None, True, ast)
 
 
-ClassMember = Union[FuncDef, VarDefGeneric]
-Env = Union[VarDefGeneric, TypeDef]
-TrueSymbol = Union[TypeDef, FuncDef, VarDefGeneric]
+ClassMember = Union[FuncDef, VarDef]
+Env = Union[VarDef, TypeDef]
+TrueSymbol = Union[TypeDef, FuncDef, VarDef]
 SymtableEntry = TypeVar("SymtableEntry", TypeDef, ClassMember, Env, TrueSymbol, covariant=True)
 SymtableEntryInvariant = TypeVar("SymtableEntryInvariant", TypeDef, ClassMember, Env, TrueSymbol)
 
@@ -319,5 +319,5 @@ class GenericSymtable(Generic[SymtableEntry], Dict[str, SymtableEntry]):  # type
 
 GlobalClassTable = GenericSymtable[TypeDef]  # Read: (Global classes) table
 ClassTable = GenericSymtable[ClassMember]  # type: ignore # Read: Class' members table
-EnvTable = GenericSymtable[Union[VarDefGeneric, TypeDef]]
+EnvTable = GenericSymtable[Union[VarDef, TypeDef]]
 SymbolTable = GenericSymtable[TrueSymbol]
