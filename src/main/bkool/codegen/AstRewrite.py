@@ -92,10 +92,10 @@ def fold_string(exprs: Tuple[Expr, ...]) -> Tuple[Expr, ...]:
 
 
 def to_expr(folded: Tuple[Expr, ...], op: str) -> "Expr":
-    #    ( 1 ; ((2 * (3 * 1)) ; (-4) )
-    # -> + (+ 1 [* 2 {* 3 1} ] ) (-4)
+    # folded = ( 1 ; (* 2 (* 3 1)) ; (-4) ), op = "+"
+    # -> + {+ 1 [* 2 (* 3 1)]} (-4)
     #    (1) -> (1)
-    # len(folded) < 2 -> folded[0] else reduce(...)
+    # if len(folded) < 2 -> folded[0] else reduce(...)
 
     return reduce(lambda a, e: BinaryOp(op, a, e), folded[1:], folded[0])
 
