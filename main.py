@@ -15,7 +15,7 @@ sys.path.append("./src/main/bkool/codegen/")
 
 from AdditionalTypes import *
 from AST import *
-from MUtils import MUtils  # type: ignore
+from MyUtils import MyUtils  # type: ignore
 
 if __name__ == "__main__":
     MUtils("test.java", "expect.txt").test_codegen()
