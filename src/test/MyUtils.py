@@ -188,9 +188,9 @@ class MyUtils:
 
         if run:
             args = sys.argv[1:]
-            
+            S = ":" if os.name == "posix" else ";"
             subprocess.run(
-                f"""{java} -cp "./src/lib;{classpath}" BKoolClass {" ".join(args)}""",
+                f"""{java} -cp "./src/lib{S}{classpath}" BKoolClass {" ".join(args)}""",
                 shell=True,
                 stdout=None,
                 timeout=10,
