@@ -1,0 +1,23 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/src/main/bkool/utils",
+        "${workspaceFolder}/src/main/bkool/astgen",
+        "${workspaceFolder}/src/main/bkool/checker",
+        "${workspaceFolder}/src/main/bkool/codegen",
+        "${workspaceFolder}/src/main/bkool/parser",
+        "${workspaceFolder}/target",
+        "${workspaceFolder}/src/test",
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportSelfClsParameterName": "none"
+    },
+    "python.formatting.autopep8Args": [
+        "--ignore",
+        "E402"
+    ],
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "python.formatting.provider": "black"
+}
