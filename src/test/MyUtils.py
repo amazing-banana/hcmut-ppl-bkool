@@ -2,6 +2,7 @@
 import os
 import sys
 import subprocess
+import json
 from typing import Optional, Any, Union, cast
 
 
@@ -190,7 +191,7 @@ class MyUtils:
             args = sys.argv[1:]
             S = ":" if os.name == "posix" else ";"
             subprocess.run(
-                f"""{java} -cp "./src/lib{S}{classpath}" BKoolClass {" ".join(args)}""",
+                f"""{java} -cp "./src/lib{S}{classpath}" BKoolClass {" ".join(json.dumps(a) for a in args)}""",
                 shell=True,
                 stdout=None,
                 timeout=10,
